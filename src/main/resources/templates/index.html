@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head"></head>
+<body>
+
+<!--Navigation-->
+<nav th:replace="base :: navbar"></nav>
+
+
+<div th:each="flight : ${flights}" class="container spaceAbove">
+<div class="row">
+    <div class="card makePretty bg-light mx-auto animated bounceInUp">
+        <div class="card-header dropright">
+        <h3>
+            [[${flight.price}]] &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            [[${flight.airline}]] &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <i class="fas fa-image" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            <div class="dropdown-menu">
+                <div th:if="${flight.imageurl} != null">
+                    <img th:src="${flight.imageurl}" class="resize">
+                </div>
+            </div>
+        </h3>
+<!--            <div class="btn-group dropright">-->
+<!--                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                    Photo-->
+<!--                </button>-->
+<!--                <div class="dropdown-menu">-->
+<!--                    <div th:if="${flight.imageurl} != null">-->
+<!--                        <img th:src="${flight.imageurl}" class="resize rounded">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">[[${flight.date}]]&nbsp&nbsp&nbsp&nbsp[[${flight.departingAirport}]]&nbsp&nbsp&nbsp&nbsp<i class="fas fa-long-arrow-alt-right"></i>&nbsp&nbsp&nbsp&nbsp[[${flight.arrivingAirport}]]</p>
+        </div>
+    </div>
+<!--        <div class="card">-->
+<!--            <div class="card-body">-->
+<!--                <p><h3>[[${flight.price}]]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp[[${flight.airline}]]</h3></p>-->
+<!--                <p>[[${flight.date}]]&nbsp[[${flight.departingAirport}]]&nbsp&nbsp&nbsp&nbsp-->
+<!--                    <i class="fas fa-long-arrow-alt-right"></i>&nbsp&nbsp&nbsp&nbsp[[${flight.arrivingAirport}]]</p>-->
+<!--            </div>-->
+<!--        </div>-->
+</div>
+</div>
+
+
+<script>
+    $('a[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'bottom',
+        html: true
+    });
+</script>
+<th:block th:replace="base :: jslinks"></th:block>
+</body>
+</html>

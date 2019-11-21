@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Open+San:800|Poppins:500');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+body {
+    background: url(https://i.imgur.com/XBgyOHQ.jpg);
+
+}
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    font-weight: 500;
+    align-content: center;
+}
+.navbar-dark {
+    background-color: #3b4347 !important;
+}
+.navbar-nav li {
+    padding-right: 20px;
+    padding-left: 20px
+}
+.nav-link {
+    font-size: 1.1em !important;
+}
+.btn-primary {
+    background-color: #3286bb !important;
+    border-color: #3286bb !important;
+}
+.fa-plane {
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 3px steelblue;
+    color: white;
+}
+.bounceInUp {
+    animation-duration: 3s;
+}
+.slow {
+    animation-delay: 0.3s;
+}
+.mover {
+    animation: swing 5s infinite;
+}
+@keyframes move {
+    20%, 100% {
+        transform: translate(200px, 0);
+    }
+}
+.spaceAbove {
+    margin-top: 1rem;
+}
+.spaceAbove2 {
+    margin-top: 7px;
+}
+.resize {
+    height: 150px;
+    width: 150px;
+    padding-left: 7px;
+}
+.paddingTop {
+    padding-top: 1rem;
+}
+h3 {
+    padding-top: 10px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600 !important;
+}
+
+.makePretty {
+    text-align: center;
+    width: 500px;
+}
+.card-header {
+    background-color: #d7d7d7;
+}
