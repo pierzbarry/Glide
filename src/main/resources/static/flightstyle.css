@@ -65,17 +65,37 @@ body {
 .paddingTop {
     padding-top: 1rem;
 }
+.paddingBottom {
+    padding-bottom: 10px;
+}
 h3 {
     padding-top: 10px;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 600 !important;
 }
-
 .makePretty {
-    text-align: center;
     width: 500px;
 }
 .card-header {
     background-color: #d7d7d7;
 }
+footer {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #6c757d;
+    color: white;
+}
+.noPad {
+    padding-bottom: 0;
+}
+.center {
+    align-content: center;
+}
+.rightSide {
+    margin-left: 100px;
+}
+.fa-cog {
+    margin-right: 5px;
+}
+
