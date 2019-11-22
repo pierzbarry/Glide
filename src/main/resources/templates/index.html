@@ -18,7 +18,7 @@
         <div class="d-inline"><i class="fas fa-globe"></i>&nbsp[[${flight.airline}]]</div>
 
         <div class="d-inline float-right">
-            <i class="fas fa-image" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            <i class="fas fa-image" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>&nbsp&nbsp&nbsp
             <div class="dropdown-menu">
                 <div th:if="${flight.imageurl} != null">
                     <img th:src="${flight.imageurl}" class="resize">
@@ -33,7 +33,7 @@
             <div class="d-inline float-left">
 
                 <p class="card-text">
-                <i class="fas fa-calendar-day"></i> [[${flight.date}]]:
+                <i class="fas fa-calendar-day"></i> [[${flight.date}]]:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 [[${flight.departingAirport}]]
                 <i class="fas fa-long-arrow-alt-right"></i>
                 [[${flight.arrivingAirport}]]
@@ -42,7 +42,7 @@
             </div>
 
             <div class="d-inline float-right">
-                <i class="fas fa-cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <i class="fas fa-cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>&nbsp&nbsp&nbsp&nbsp
                 <div class="dropdown-menu text-center">
                     <a class="nav-link d-inline" th:href="@{/delete/{id}(id=${flight.id})}"><i class="fas fa-trash-alt"></i></a>
                     <a class="nav-link d-inline" th:href="@{/show/{id}(id=${flight.id})}"><i class="fas fa-search"></i></a>
@@ -54,18 +54,6 @@
     </div>
 </div>
 </div>
-
-<!--<a data-toggle="collapse" th:href="'#collapse_'+${flight.id}" role="button" aria-expanded="false" aria-controls="collapseExample">-->
-<!--    <span style="font-size:1.25em"><i class="fas fa-cog"></i></span>-->
-<!--</a>-->
-<!--<div class="collapse" th:id="'collapse_'+${flight.id}">-->
-<!--    <div class="card card-body card-menu" style="padding: 10px;margin-right: 1px; height: 147px;">-->
-<!--        <a class="btn btn-info" role="button" style="margin-bottom:5px" th:href="@{/update/{id}(id=${flight.id})}">Update</a>-->
-<!--        <a class="btn btn-info" role="button" style="margin-bottom:5px" th:href="@{/show/{id}(id=${flight.id})}">Detail</a>-->
-<!--        <a class="btn btn-info" role="button" th:href="@{/delete/{id}(id=${flight.id})}">Delete</a>-->
-<!--    </div>-->
-<!--</div>-->
-
 
 <!--Footer-->
 <footer th:replace="base :: footer"></footer>

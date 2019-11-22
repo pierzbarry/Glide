@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head"></head>
+<body>
+
+<!--Navigation-->
+<nav th:replace="base :: navbar"></nav>
+
+<!--Loop for Flight Form-->
+<div th:each="flight : ${flights}" class="container spaceAbove">
+    <div class="row">
+        <div class="card makePretty bg-light mx-auto animated bounceInUp">
+            <div class="card-header dropright">
+                <h3>
+
+                    <div class="d-inline float-left"><i class="fas fa-dollar-sign"></i>&nbsp[[${flight.price}]]</div>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <div class="d-inline"><i class="fas fa-globe"></i>&nbsp[[${flight.airline}]]</div>
+
+                    <div class="d-inline float-right">
+                        <i class="fas fa-image" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>&nbsp&nbsp&nbsp
+                        <div class="dropdown-menu">
+                            <div th:if="${flight.imageurl} != null">
+                                <img th:src="${flight.imageurl}" class="resize">
+                            </div>
+                        </div>
+                    </div>
+
+                </h3>
+            </div>
+
+            <div class="card-body">
+                <div class="d-inline float-left">
+
+                    <p class="card-text">
+                        <i class="fas fa-calendar-day"></i> [[${flight.date}]]:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        [[${flight.departingAirport}]]
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                        [[${flight.arrivingAirport}]]
+                    </p>
+
+                </div>
+
+                <div class="d-inline float-right">
+                    <i class="fas fa-cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>&nbsp&nbsp&nbsp&nbsp
+                    <div class="dropdown-menu text-center">
+                        <a class="nav-link d-inline" th:href="@{/delete/{id}(id=${flight.id})}"><i class="fas fa-trash-alt"></i></a>
+                        <a class="nav-link d-inline" th:href="@{/show/{id}(id=${flight.id})}"><i class="fas fa-search"></i></a>
+                        <a class="nav-link d-inline" th:href="@{/update/{id}(id=${flight.id})}"><i class="fas fa-edit"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<footer th:replace="base :: footer"></footer>
+
+<!--JavaScript-->
+<script>
+    $('a[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'bottom',
+        html: true
+    });
+</script>
+<th:block th:replace="base :: jslinks"></th:block>
+</body>

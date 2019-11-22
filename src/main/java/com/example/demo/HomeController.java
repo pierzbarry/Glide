@@ -68,4 +68,12 @@ public class HomeController {
         flightRepository.deleteById(id);
         return "redirect:/";
     }
+
+    @PostMapping("/searchlist")
+    public String search(Model model, @RequestParam("searchString") String search){
+        model.addAttribute("flights", flightRepository.findByDepartingAirportContainingIgnoreCaseOrArrivingAirportContainingIgnoreCaseOrPriceContainingIgnoreCaseOrDateContainingIgnoreCaseOrFlightNumberContainingIgnoreCaseOrAirlineContainingIgnoreCase(search,
+                search, search, search, search, search));
+        return "searchlist";
+    }
 }
+
